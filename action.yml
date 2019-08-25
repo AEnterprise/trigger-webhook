@@ -1,10 +1,14 @@
-name: 'Node 12 Template Action'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: 'Trigger webhook'
+description: 'Trigger a webhook with cURL'
+author: 'AEnterprise'
 inputs:
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  URL:
+    description: 'The url'
+  METHOD:
+    description: 'What method to use, defaults to POST'
+    default: 'POST'
+  CURL_ARGS:
+    description: 'The arguments to pass to curl'
 runs:
   using: 'node12'
   main: 'lib/main.js'
