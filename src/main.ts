@@ -6,15 +6,8 @@ async function run() {
         const CURL_ARGS = core.getInput('CURL_ARGS');
         const METHOD = core.getInput('METHOD');
         const URL = core.getInput('URL');
+        core.debug(CURL_ARGS)
         const options = {
-            listeners: {
-                stdout: (data: Buffer) => {
-                    core.debug(data.toString());
-                },
-                stderr: (data: Buffer) => {
-                    core.error(data.toString());
-                }
-            },
             failOnStdErr: true
         };
         const args = [`-X ${METHOD}`, `"${URL}"`];
