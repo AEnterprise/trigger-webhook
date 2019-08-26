@@ -10,7 +10,7 @@ async function run() {
         const options = {
             failOnStdErr: true
         };
-        const args = [`-X ${METHOD}`, `"${URL}"`];
+        const args = [`-X ${METHOD}`, `${URL}`];
         CURL_ARGS.split(/(?= --?[A-z]+ ["'])(?: )/g).forEach((part) => args.push(part));
         await exec.exec("curl", args, options);
     } catch (error) {
